@@ -1,6 +1,7 @@
 # docker-quick-command
 
 ## docker-tags
+
 ```bash
 Usage: docker-tags NAME[:TAG]
 
@@ -14,4 +15,16 @@ Example:
     docker search nginx | docker-tags :1.15.8
     echo nginx | docker-tags
     echo nginx | docker-tags :1.15.8
+```
+
+## delete all none version
+
+```bash
+docker images|grep 'none'|awk '{print $3}'|xargs docker rmi
+```
+
+## delete all history
+
+```bash
+docker rm `docker ps -a -q`
 ```
