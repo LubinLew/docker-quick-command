@@ -20,7 +20,7 @@ Example:
 ## delete all none version
 
 ```bash
-docker images|grep 'none'|awk '{print $3}'|xargs docker rmi
+docker images | awk '$2 ~/<none>/{print $3}'|xargs docker rmi
 ```
 
 ## delete all history
